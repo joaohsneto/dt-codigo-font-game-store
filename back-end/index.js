@@ -11,6 +11,7 @@ app.get('/', (_req, res) => {
   res.status(statuscode.OK).send('FUNCIONOU!')
 });
 
+// Cadastrar usuários
 app.post('/register', controller.createUser);
 
 app.listen(PORT, () => console.log(`Ouvindo a porta ${PORT}`));
