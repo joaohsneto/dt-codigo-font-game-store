@@ -8,6 +8,8 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 
+app.use(express.static('public'));
+
 app.get('/', (_req, res) => {
   res.status(statuscode.OK).send('FUNCIONOU!')
 });
