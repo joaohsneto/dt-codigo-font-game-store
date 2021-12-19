@@ -18,9 +18,9 @@ app.get('/', (_req, res) => {
 app.post('/register', createUser);
 
 // Cadastrar produtos
-app.post('/product', createProduct);
+app.post('/products', createProduct);
 
 // Listar todos os produtos
-app.get('/product', getAllProducts);
+app.get('/products', getAllProducts); 
 
 app.listen(PORT, () => console.log(`Ouvindo a porta ${PORT}`));
