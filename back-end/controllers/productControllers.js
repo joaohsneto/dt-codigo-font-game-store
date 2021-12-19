@@ -7,6 +7,12 @@ const createProduct = async (req, res) => {
   return res.status(statusCode.CREATED).json({ _id: id, name, price, quantity, image });
 };
 
+const getAllProducts = async (_req, res) => {
+  const allproducts = await service.getAllProducts();
+  return res.status(statusCode.OK).json(allproducts);
+};
+
 module.exports = {
   createProduct,
+  getAllProducts,
 };
