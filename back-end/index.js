@@ -1,6 +1,7 @@
 const express = require('express');
 const statuscode = require('http-status-codes');
-const controller = require('./controllers/userControllers');
+const { createUser } = require('./controllers/userControllers');
+const { createProduct } = require('./controllers/productControllers');
 require('dotenv').config();
 
 const PORT = process.env.PORT;
@@ -12,6 +13,8 @@ app.get('/', (_req, res) => {
 });
 
 // Cadastrar usuários
-app.post('/register', controller.createUser);
+app.post('/register', createUser);
+
+app.post('/product', createProduct);
 
 app.listen(PORT, () => console.log(`Ouvindo a porta ${PORT}`));
