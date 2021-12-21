@@ -1,16 +1,20 @@
 import React from 'react';
 import '../styles/products.css';
+import '../styles/navbar.css';
 
 import ListProducts from '../components/ListProducts';
+import GeneralNavbar from '../components/NavBar';
 
 const Home = () => {
 
   return (
     <>
       <header>
-        <h1>Navbar aqui</h1>
+        <GeneralNavbar />
       </header>
-      <ListProducts />
+      <section>
+        <ListProducts />
+      </section>
     </>
   );
 };

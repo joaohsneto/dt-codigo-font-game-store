@@ -13,7 +13,7 @@ const ListProducts = () => {
     <section>
       <div className="card-container">
         { products.map((elem) => (
-          <div key={ elem.id } className="card-products">
+          <div key={ elem._id } className="card-products">
             <div className='card_image' name={ elem.name } style={{
               backgroundSize: 'cover',
               backgroundImage:`url(${elem.image})`,
