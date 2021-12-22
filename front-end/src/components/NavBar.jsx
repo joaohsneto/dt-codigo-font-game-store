@@ -26,7 +26,7 @@ const GeneralNavbar = () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button is-primary" href='/'>
+              <a className="button is-primary" href='/register'>
                 <strong>Cadastrar</strong>
               </a>
               <a className="button is-light" href='/'>
