@@ -26,7 +26,7 @@ const LoginUser = () => {
       setLoginEmail({
         invalidEmail: true,
       });
-      setLoginMsgError('*Invalid email');
+      setLoginMsgError('E-mail inválido!');
     }
   };
 
@@ -43,7 +43,7 @@ const LoginUser = () => {
       setLoginPassword({
         invalidPassword: true,
       });
-      setLoginMsgError('*Must have more than 6 characters');
+      setLoginMsgError('Senha menor que 6 caracteres!');
     }
   };
 
@@ -107,7 +107,7 @@ const LoginUser = () => {
               className="button is-primary btn-general"
               type="button"
             >
-              CADASTRAR
+              Entrar
             </button>
             <div className="message-error">
               <span>

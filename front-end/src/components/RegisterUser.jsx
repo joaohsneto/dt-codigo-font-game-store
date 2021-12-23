@@ -30,7 +30,7 @@ const RegisterUser = () => {
       setCreateEmail({
         invalidEmail: true,
       });
-      setRegisterMsgError('*Invalid email');
+      setRegisterMsgError('E-mail inválido!');
     }
   };
 
@@ -46,7 +46,7 @@ const RegisterUser = () => {
       setCreatePassword({
         invalidPassword: true,
       });
-      setRegisterMsgError('*Must have more than 6 characters');
+      setRegisterMsgError('Senha menor que 6 caracteres!');
     }
   };
 
@@ -62,7 +62,7 @@ const RegisterUser = () => {
       setConfirmPassword({
         invalidConfirmPassword: true,
       });
-      setRegisterMsgError('*Passwords don`t match');
+      setRegisterMsgError('Senhas não conferem!');
     }
   };
 
@@ -106,7 +106,6 @@ const RegisterUser = () => {
           <div className="form-content">
             <input
               onChange={ ({ target }) => handleChangeEmail(target) }
-              data-testid="common_register__input-email"
               className="input input-general"
               type="email"
               name="email"
@@ -114,7 +113,6 @@ const RegisterUser = () => {
             />
             <input
               onChange={ ({ target }) => handleChangePassword(target) }
-              data-testid="common_register__input-password"
               className="input input-general"
               type="password"
               name="password"
