@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const statuscode = require('http-status-codes');
+const { loginUser } = require('./controllers/loginControllers');
 const { createUser } = require('./controllers/userControllers');
 const { createProduct, getAllProducts } = require('./controllers/productControllers');
 require('dotenv').config();
@@ -19,6 +20,9 @@ app.get('/', (_req, res) => {
 
 // Cadastrar usuários
 app.post('/register', createUser);
+
+// Login do usuário
+app.post('/login', loginUser);
 
 // Cadastrar produtos
 app.post('/products', createProduct);
