@@ -10,7 +10,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 65vh;
   justify-content: center;
   width: 100vw;
 }
@@ -43,4 +43,12 @@
   color: firebrick;
   height: 20px;
   margin-top: 10px;
+}
+
+.principal-title {
+  margin-top: 25px;
+}
+
+.navbar-item img {
+  max-height: 4rem;
 }

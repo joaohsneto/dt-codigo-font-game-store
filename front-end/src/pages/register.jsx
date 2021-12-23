@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/resgister.css';
 import '../styles/navbar.css';
+import '../styles/resgister.css';
 
 import GeneralNavbar from '../components/NavBar';
 import RegisterUser from '../components/RegisterUser';
@@ -12,7 +12,7 @@ const Register = () => {
       <header>
         <GeneralNavbar />
       </header>
-      <section>
+      <section className='principal-title'>
         <h1 className="title is-1">Compre e venda seus jogos!</h1>
       </section>
       <section>

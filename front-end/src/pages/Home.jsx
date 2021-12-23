@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/products.css';
 import '../styles/navbar.css';
+import '../styles/products.css';
 
-import ListProducts from '../components/ListProducts';
 import GeneralNavbar from '../components/NavBar';
+import ListProducts from '../components/ListProducts';
 
 const Home = () => {
 

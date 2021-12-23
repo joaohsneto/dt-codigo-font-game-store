@@ -6,7 +6,7 @@ const GeneralNavbar = () => {
     <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
-          OVER GAMES
+          <img src="../images/game-store04.png" alt="game-store" />
         </a>
 
         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarBasicExample" href='/'>
