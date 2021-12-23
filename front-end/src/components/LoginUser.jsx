@@ -2,80 +2,61 @@ import React, { useState } from 'react';
 import CryptoJS  from 'crypto-js';
 import { Navigate } from 'react-router-dom';
 
-const RegisterUser = () => {
-  const [createUserAllowed, setCreateUserAllowed] = useState(false);
-  const [createEmail, setCreateEmail] = useState({
+const LoginUser = () => {
+  const [loginAllowed, setLoginAllowed] = useState(false);
+  const [loginEmail, setLoginEmail] = useState({
     invalidEmail: true,
     fieldEmail: '',
   });
-  const [createPassword, setCreatePassword] = useState({
+  const [loginPassword, setLoginPassword] = useState({
     invalidPassword: true,
     fieldPassword: '',
   });
-  const [confirmPassword, setConfirmPassword] = useState({
-    invalidConfirmPassword: true,
-    fieldConfirmPassword: '',
-  });
-  const [registerMsgError, setRegisterMsgError] = useState();
+  const [loginMsgError, setLoginMsgError] = useState();
 
   const handleChangeEmail = ({ value }) => {
     const regexEmail = /^([\w\\.\\-]+)@([\w\\-]+)((\.(\w){2,3})+)$/;
     if (regexEmail.test(value)) {
-      setCreateEmail({
+      setLoginEmail({
         invalidEmail: false,
         fieldEmail: value,
       });
-      setRegisterMsgError('');
+      setLoginMsgError('');
     } else {
-      setCreateEmail({
+      setLoginEmail({
         invalidEmail: true,
       });
-      setRegisterMsgError('*Invalid email');
+      setLoginMsgError('*Invalid email');
     }
   };
 
   const handleChangePassword = ({ value }) => {
     const six = 6;
     if (value.length >= six) {
-      setCreatePassword({
+      const passwordMD5 = CryptoJS.MD5(value).toString()
+      setLoginPassword({
         invalidPassword: false,
-        fieldPassword: value,
+        fieldPassword: passwordMD5,
       });
-      setRegisterMsgError('');
+      setLoginMsgError('');
     } else {
-      setCreatePassword({
+      setLoginPassword({
         invalidPassword: true,
       });
-      setRegisterMsgError('*Must have more than 6 characters');
-    }
-  };
-
-  const handleChangeConfirmPassword = ({ value }) => {
-    if (value === createPassword.fieldPassword) {
-      const passwordMD5 = CryptoJS.MD5(value).toString()
-      setConfirmPassword({
-        invalidConfirmPassword: false,
-        fieldConfirmPassword: passwordMD5,
-      });
-      setRegisterMsgError('');
-    } else {
-      setConfirmPassword({
-        invalidConfirmPassword: true,
-      });
-      setRegisterMsgError('*Passwords don`t match');
+      setLoginMsgError('*Must have more than 6 characters');
     }
   };
 
   const handleClick = (async () => {
-    const response = await fetch('http://localhost:3001/register', {
+    const response = await fetch('http://localhost:3001/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: createEmail.fieldEmail,
-        password: confirmPassword.fieldConfirmPassword,
+        email: loginEmail.fieldEmail,
+        password: loginPassword.fieldPassword,
       }),
     });
     const data = await response.json();
@@ -85,17 +66,17 @@ const RegisterUser = () => {
         token: data.token,
       }));
     if (data.message) {
-      setRegisterMsgError(data.message);
+      setLoginMsgError(data.message);
     } else {
-      setCreateEmail({
+      setLoginEmail({
         invalidEmail: true,
         fieldEmail: '',
       });
-      setCreatePassword({
+      setLoginPassword({
         invalidPassword: true,
         fieldPassword: '',
       });
-      setCreateUserAllowed(true);
+      setLoginAllowed(true);
     }
     return data;
   });
@@ -120,16 +101,9 @@ const RegisterUser = () => {
               name="password"
               placeholder="Senha"
             />
-            <input
-              onChange={ ({ target }) => handleChangeConfirmPassword(target) }
-              className="input input-general"
-              type="password"
-              name="confirmedpassword"
-              placeholder="Confirmar senha"
-            />
             <button
               onClick={ handleClick }
-              disabled={ confirmPassword.invalidConfirmPassword || createEmail.invalidEmail || createPassword.invalidPassword }
+              disabled={ loginEmail.invalidEmail || loginPassword.invalidPassword }
               className="button is-primary btn-general"
               type="button"
             >
@@ -137,14 +111,14 @@ const RegisterUser = () => {
             </button>
             <div className="message-error">
               <span>
-                { registerMsgError }
+                { loginMsgError }
               </span>
             </div>
           </div>
       </div>
-      { createUserAllowed && <Navigate to="/home" />}
+      { loginAllowed && <Navigate to="/home" />}
     </section>
   );
 };
 
-export default RegisterUser;
+export default LoginUser;
