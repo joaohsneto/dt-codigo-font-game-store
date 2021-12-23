@@ -82,7 +82,7 @@ const RegisterUser = () => {
     localStorage.setItem('user',
       JSON.stringify({
         email: data.email,
-        // token: data.token,
+        token: data.token,
       }));
     if (data.message) {
       setMsgError(data.message);
