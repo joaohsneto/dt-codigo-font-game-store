@@ -60,7 +60,7 @@ const GeneralNavbar = () => {
               <a className="button is-primary" href='/register'>
                 <strong>Cadastrar</strong>
               </a>
-              <a className="button is-light" href='/'>
+              <a className="button is-light" href='/login'>
                 Entrar
               </a>
             </div>

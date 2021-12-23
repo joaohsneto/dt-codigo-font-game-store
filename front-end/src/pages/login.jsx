@@ -3,9 +3,9 @@ import '../styles/navbar.css';
 import '../styles/resgister.css';
 
 import GeneralNavbar from '../components/NavBar';
-import RegisterUser from '../components/RegisterUser';
+import LoginUser from '../components/LoginUser';
 
-const Register = () => {
+const Login = () => {
 
   return (
     <>
@@ -13,13 +13,13 @@ const Register = () => {
         <GeneralNavbar />
       </header>
       <section className='principal-title'>
-        <h1 className="title is-1">Cadastre-se para começar a economizar e lucrar!</h1>
+        <h1 className="title is-1">Compre e venda seus jogos agora mesmo!</h1>
       </section>
       <section>
-        <RegisterUser />
+        <LoginUser />
       </section>
     </>
   );
 };
 
-export default Register;
+export default Login;
