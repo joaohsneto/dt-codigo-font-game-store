@@ -1,11 +1,11 @@
 const connect = require('./connections');
 
-const findUserByEmail = async (email) => {
+const loginUser = async ({ email, password }) => {
   const db = await connect();
-  const findByEmail = await db.collection('users').findOne(email);
-  return findByEmail;
+  const login = await db.collection('users').findOne({ email, password });
+  return login;
 };
 
 module.exports = {
-  findUserByEmail,
+  loginUser,
 };
