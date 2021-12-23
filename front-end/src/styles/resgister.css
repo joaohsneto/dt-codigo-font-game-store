@@ -1,0 +1,63 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-register {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.form-register {
+  background-color: #e5e5e5;
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 400px;
+  height: auto;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.input-general {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-general {
+  margin-top: 15px;
+}
+
+.message-error {
+  color: firebrick;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.principal-title {
+  margin-top: 25px;
+}
+
+.navbar-item img {
+  max-height: 4rem;
+}
+
+.user-email {
+  margin-right: 20px;
+}
+
+.title-text-email {
+  color: white;
+}
