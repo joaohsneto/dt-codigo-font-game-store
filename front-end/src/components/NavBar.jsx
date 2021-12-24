@@ -7,6 +7,11 @@ const GeneralNavbar = () => {
     userLogged: false,
   });
 
+  const [classMenu, setClassMenu] = useState({
+    classMenuName: 'navbar-menu',
+    burguerMenuActive: false,
+  });
+
   useEffect(() => {
     const loggedUser = JSON.parse(localStorage.getItem('user'));
     if (loggedUser) {
@@ -17,21 +22,35 @@ const GeneralNavbar = () => {
     }
   }, []);
 
+  const handleClickBurguerMenu = () => {
+    if (!classMenu.burguerMenuActive) {
+      setClassMenu({
+        classMenuName: 'navbar-menu is-active',
+        burguerMenuActive: true,
+      });
+    } else {
+      setClassMenu({
+        classMenuName: 'navbar-menu',
+        burguerMenuActive: false,
+      });
+    }
+  };
+
   const logged = () => {
     return (
-      <div className="navbar-menu">
+      <div className={ `${classMenu.classMenuName}` }>
         <div className="navbar-start">
           <a className="navbar-item" href='/'>
             Home
           </a>
-          <a className="navbar-item" href='/'>
+          <a className="navbar-item" href='/product'>
             Vender Jogos
           </a>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="user-email">
-              <h3 className="title is-3 title-text-email">
+              <h3 className="title is-4 has-text-grey-light">
                 { currentUser.userData.email }
               </h3>
             </div>
@@ -77,7 +96,16 @@ const GeneralNavbar = () => {
           <img src="../images/game-store04.png" alt="game-store" />
         </a>
 
-        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarBasicExample" href='/'>
+        <a
+          role="button"
+          id="burguer-menu"
+          className="navbar-burger"
+          aria-label="menu"
+          aria-expanded="true"
+          data-target="navbarBasicExample"
+          href='#burguer-menu'
+          onClick={ () => handleClickBurguerMenu() }
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>

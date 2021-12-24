@@ -58,6 +58,43 @@
   margin-right: 20px;
 }
 
-.title-text-email {
-  color: white;
+.btn-add-cart {
+  margin-top: 10px;
+  margin-bottom: 15px
+};
+
+.delete {
+  background-color: indianred;
+  margin-left: 20px;
+  margin-top: 14px;
+}
+
+.delete:hover {
+  background-color: salmon;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.content, h3 {
+  margin-top: 10px;
+}
+
+.modal-card-body {
+  margin: auto;
+  height: auto;
+}
+
+.product-name {
+  margin-top: 10px;
+}
+
+.list-product-content {
+  margin-top: 90%;
+  background: rgba(0, 0, 0, .8);
+  height: 40%;
+  padding-top: 2px;
 }
