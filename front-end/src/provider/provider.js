@@ -3,10 +3,19 @@ import PropTypes from 'prop-types';
 import GameStoreContext from '../context/context';
 
 function Provider({ children }) {
+  const [products, setProducts] = useState([]);
   const [shopCart, setShopCart] = useState([]);
+  const [updateSum, setUpdateSum] = useState(true)
+  const [totalPrice, setTotalPrice] = useState([0]);
   const contextValue = {
+    updateSum,
+    setUpdateSum,
     shopCart,
     setShopCart,
+    totalPrice,
+    setTotalPrice,
+    products,
+    setProducts
   };
 
   return (

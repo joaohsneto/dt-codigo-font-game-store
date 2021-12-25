@@ -3,7 +3,7 @@ const cors = require('cors');
 const statuscode = require('http-status-codes');
 const { loginUser } = require('./controllers/loginControllers');
 const { createUser } = require('./controllers/userControllers');
-const { createProduct, getAllProducts } = require('./controllers/productControllers');
+const { createProduct, getAllProducts, updateQuantity } = require('./controllers/productControllers');
 require('dotenv').config();
 
 const PORT = process.env.PORT;
@@ -26,6 +26,9 @@ app.post('/login', loginUser);
 
 // Cadastrar produtos
 app.post('/products', createProduct);
+
+// Atualizar quantidade
+app.put('/products/:id', updateQuantity);
 
 // Listar todos os produtos
 app.get('/products', getAllProducts); 

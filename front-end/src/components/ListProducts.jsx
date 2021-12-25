@@ -2,15 +2,21 @@ import React, { useState, useEffect, useContext } from 'react';
 import GameStoreContext from '../context/context';
 
 const ListProducts = () => {
-  const [products, setProducts] = useState([]);
   const [modalActive, setModalActive] = useState("modal");
-  const {shopCart, setShopCart} = useContext(GameStoreContext)
+  const {
+    shopCart,
+    setShopCart,
+    totalPrice,
+    setTotalPrice,
+    products,
+    setProducts,
+  } = useContext(GameStoreContext)
 
   useEffect(() => {
     fetch('http://localhost:3001/products')
       .then((response) => response.json())
       .then((response) => setProducts(response));
-  }, []);
+  }, [setProducts]);
 
   const handleClickAddCart = (elem) => {
     if (!shopCart.find((item) => item._id === elem._id)) {
@@ -18,11 +24,16 @@ const ListProducts = () => {
         _id: elem._id,
         name: elem.name,
         price: elem.price,
+        quantity: elem.quantity,
         image: elem.image,
       }
       const newShopCart = shopCart;
       newShopCart.push(addProduct);
-      return setShopCart([...newShopCart]);
+      setShopCart([...newShopCart]);
+      const newTotaPrice = totalPrice;
+      newTotaPrice.push(elem.price)
+      setTotalPrice([...newTotaPrice]);
+      return localStorage.setItem('cart', JSON.stringify(shopCart));
     }
     return setModalActive("modal is-active");
   };
@@ -46,34 +57,56 @@ const ListProducts = () => {
                       { 'R$ ' }
                     </span>
                     <span className="title is-5 has-text-primary">
-                      { (elem.price) }
+                      { (elem.price).toFixed(2).replace(/\./, ',') }
                     </span>
                   </p>
                   <p>
-                    <span className="title is-6 has-text-light">
-                      { 'Estoque: ' }
-                    </span>
-                    <span className="title is-6 has-text-danger">
-                      { (elem.quantity) }
-                    </span>
+                    {
+                      (elem.quantity > 0) ?
+                      (
+                        <>
+                          <span className="title is-6 has-text-danger">
+                            {elem.quantity}
+                          </span>
+                          <span className="title is-6 has-text-light">
+                            { ` em estoque` }
+                          </span>
+                        </>
+
+                      ) : 
+                      (
+                        <>
+                          <br></br>
+                          <br></br>
+                          <span className="title is-6 has-text-danger">
+                              FORA DE ESTOQUE
+                          </span>
+                        </>
+                      )
+                    }
                   </p>
-                  <div>
-                    <button onClick={ () => handleClickAddCart(elem) } className="button is-primary btn-add-cart title is-6 has-text-light">
+                  { elem.quantity > 0 && (
+                    <div>
+                    <button
+                      onClick={ () => handleClickAddCart(elem) }
+                      className="button is-primary btn-add-cart title is-6 has-text-light"
+                    >
                       Adicionar ao Carrinho
                     </button>
                   </div>
+                  )}
                 </div>
               </div>
             </div>
         ))}
-        <div class={ `${modalActive}` }>
-          <div class="modal-background"></div>
-          <div class="modal-content">
+        <div className={ `${modalActive}` }>
+          <div className="modal-background"></div>
+          <div className="modal-content">
             <div className="modal-card">
               <div className="modal-card-body">
                 <div className="content" >
                 <h3 className="title is-5 has-text-danger">Item já adicionado ao carrinho</h3>
-                <button class="delete" aria-label="close" onClick={ () => setModalActive("modal") }></button>
+                <button className="delete" aria-label="close" onClick={ () => setModalActive("modal") }></button>
                 </div>
               </div>
             </div>

@@ -37,10 +37,10 @@ const RegisterProduct = () => {
   };
 
   const handleChangeProductPrice = ({ value }) => {
-    if (value.match(/^[\d,.?!]+$/)) {
+    if (value.match(/^[\d.?!]+$/)) {
       setProductPrice({
         invalidPrice: false,
-        fieldPrice: value,
+        fieldPrice: parseFloat(value),
       });
       setProductMsgError('');
     } else {
@@ -55,7 +55,7 @@ const RegisterProduct = () => {
     if (value.match(/\d+/)) {
       setProductQuantity({
         invalidQuantity: false,
-        fieldQuantity: value,
+        fieldQuantity: parseInt(value),
       });
       setProductMsgError('');
     } else {

@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
-// import GameStoreContext from '../context/context';
+import React, { useState, useEffect, useContext } from 'react';
+import GameStoreContext from '../context/context';
+import { NavLink } from 'react-router-dom';
 
 const GeneralNavbar = () => {
+  const {shopCart} = useContext(GameStoreContext);
+
   const [currentUser, setCurrentUser] = useState({
     userData: '',
     userLogged: false,
@@ -40,24 +43,30 @@ const GeneralNavbar = () => {
     return (
       <div className={ `${classMenu.classMenuName}` }>
         <div className="navbar-start">
-          <a className="navbar-item" href='/'>
+          <NavLink className="navbar-item" to='/'>
             Home
-          </a>
-          <a className="navbar-item" href='/product'>
+          </NavLink>
+          <NavLink className="navbar-item" to='/product'>
             Vender Jogos
-          </a>
+          </NavLink>
         </div>
         <div className="navbar-end">
-          <div className="navbar-item">
+          <div className="navbar-item cart-flex">
+          <NavLink className="cart-image" to='/cart'>
+              <div className="shop-cart-icon-content">
+                <img src="../images/cartImage.png" alt="icon-cart" className="icon-cart"/>
+                <div className="cart-number" ><h3 className="title is-6 has-text-light">{ shopCart.length }</h3></div>
+              </div>
+          </NavLink>
             <div className="user-email">
               <h3 className="title is-4 has-text-grey-light">
                 { currentUser.userData.email }
               </h3>
             </div>
             <div className="buttons">
-              <a className="button is-danger" href='/' onClick={ () => localStorage.clear() }>
+              <NavLink className="button is-danger" to='/' onClick={ () => localStorage.clear() }>
                 Sair
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -69,19 +78,19 @@ const GeneralNavbar = () => {
     return (
       <div className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item" href='/'>
+          <NavLink className="navbar-item" to='/'>
             Home
-          </a>
+          </NavLink>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button is-primary" href='/register'>
+              <NavLink className="button is-primary" to='/register'>
                 <strong>Cadastrar</strong>
-              </a>
-              <a className="button is-light" href='/login'>
+              </NavLink>
+              <NavLink className="button is-light" to='/login'>
                 Entrar
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -92,9 +101,11 @@ const GeneralNavbar = () => {
   return (
     <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
-          <img src="../images/game-store04.png" alt="game-store" />
-        </a>
+        <div className="navbar-item">
+          <NavLink to="/">
+            <img src="../images/game-store.png" alt="game-store" className="brand" />
+          </NavLink>
+        </div>
 
         <a
           role="button"

@@ -10,7 +10,13 @@ const getAllProducts = async () => {
   return allProducts;
 };
 
+const updateQuantity = async ({ quantity }, id) => {
+  const update = await model.updateQuantity({ quantity }, id);
+  return update;
+};
+
 module.exports = {
   createProduct,
   getAllProducts,
+  updateQuantity,
 };

@@ -54,8 +54,14 @@
   max-height: 4rem;
 }
 
-.user-email {
+.brand {
+  width: 250px;
+}
+
+.user-email, h3 {
   margin-right: 20px;
+  margin-left: 15px;
+  margin-top: -10px;
 }
 
 .btn-add-cart {
@@ -64,7 +70,7 @@
 };
 
 .delete {
-  background-color: indianred;
+  background-color: rgb(243 7 7 / 20%);
   margin-left: 20px;
   margin-top: 14px;
 }
@@ -92,9 +98,65 @@
   margin-top: 10px;
 }
 
-.list-product-content {
-  margin-top: 90%;
-  background: rgba(0, 0, 0, .8);
-  height: 40%;
-  padding-top: 2px;
+.cart-image {
+  display: flex;
+  justify-content: center;
+}
+
+.shop-cart-image, img {
+  width: 80px;
+}
+
+.shop-cart-icon-content {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  width: 50px;
+}
+
+.icon-cart {
+  width: 100px;
+}
+
+.cart-number {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-left: 16px;
+  margin-top: -8px;
+}
+
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+}
+
+.shop-cart-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-width: 320px;
+  max-width: 60%;
+  margin-top: 20px;
+}
+
+.shop-cart-all-content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.shop-cart-products {
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  height: 150px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
 }

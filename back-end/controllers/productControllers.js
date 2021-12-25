@@ -12,7 +12,15 @@ const getAllProducts = async (_req, res) => {
   return res.status(statusCode.OK).json(allproducts);
 };
 
+const updateQuantity = async (req, res) => {
+  const { quantity } = req.body;
+  const { id } = req.params;
+  const update = await service.updateQuantity({ quantity }, id)
+  return res.status(statusCode.OK).json(update);
+};
+
 module.exports = {
   createProduct,
   getAllProducts,
+  updateQuantity,
 };
