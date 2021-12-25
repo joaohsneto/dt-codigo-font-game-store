@@ -3,13 +3,19 @@ import PropTypes from 'prop-types';
 import GameStoreContext from '../context/context';
 
 function Provider({ children }) {
-  const [currentUser, setCurrentUser] = useState({
-    userData: '',
-    userLogged: false,
-  });
+  const [products, setProducts] = useState([]);
+  const [shopCart, setShopCart] = useState([]);
+  const [updateSum, setUpdateSum] = useState(true)
+  const [totalPrice, setTotalPrice] = useState([0]);
   const contextValue = {
-    currentUser,
-    setCurrentUser,
+    updateSum,
+    setUpdateSum,
+    shopCart,
+    setShopCart,
+    totalPrice,
+    setTotalPrice,
+    products,
+    setProducts
   };
 
   return (
@@ -20,7 +26,6 @@ function Provider({ children }) {
 }
 
 Provider.propTypes = {
-  // https://stackoverflow.com/questions/42122522/reactjs-what-should-the-proptypes-be-for-this-props-children
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
