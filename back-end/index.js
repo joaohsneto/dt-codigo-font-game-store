@@ -6,7 +6,7 @@ const { createUser } = require('./controllers/userControllers');
 const { createProduct, getAllProducts, updateQuantity } = require('./controllers/productControllers');
 require('dotenv').config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(cors());
