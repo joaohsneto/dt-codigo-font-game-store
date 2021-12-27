@@ -12,8 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static('public'));
-
 app.get('/', (_req, res) => {
   res.status(statuscode.OK).send('FUNCIONOU!')
 });
