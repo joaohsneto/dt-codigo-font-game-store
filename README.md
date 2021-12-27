@@ -29,7 +29,7 @@ cd dt-codigo-font-game-store.git
 cd back-end
 ```
 
-Depois rode o comando abaixo para deixa a API em funcionamento na porta http://localhost:3001/
+Depois rode o comando abaixo para deixar a API em funcionamento na porta http://localhost:3001/
 
 ```
 npm run debug
