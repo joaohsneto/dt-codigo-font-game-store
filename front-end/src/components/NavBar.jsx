@@ -3,16 +3,11 @@ import GameStoreContext from '../context/context';
 import { NavLink } from 'react-router-dom';
 
 const GeneralNavbar = () => {
-  const {shopCart} = useContext(GameStoreContext);
+  const {shopCart, classMenu, setClassMenu} = useContext(GameStoreContext);
 
   const [currentUser, setCurrentUser] = useState({
     userData: '',
     userLogged: false,
-  });
-
-  const [classMenu, setClassMenu] = useState({
-    classMenuName: 'navbar-menu',
-    burguerMenuActive: false,
   });
 
   useEffect(() => {
@@ -76,7 +71,7 @@ const GeneralNavbar = () => {
 
   const notLogged = () => {
     return (
-      <div className="navbar-menu">
+      <div className={ `${classMenu.classMenuName}` }>
         <div className="navbar-start">
           <NavLink className="navbar-item" to='/'>
             Home
@@ -107,20 +102,20 @@ const GeneralNavbar = () => {
           </NavLink>
         </div>
 
-        <a
+        <NavLink
           role="button"
           id="burguer-menu"
           className="navbar-burger"
           aria-label="menu"
           aria-expanded="true"
           data-target="navbarBasicExample"
-          href='#burguer-menu'
+          to='#'
           onClick={ () => handleClickBurguerMenu() }
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </NavLink>
       </div>
       { currentUser.userLogged ? logged() : notLogged() }
     </nav>

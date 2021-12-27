@@ -7,7 +7,13 @@ function Provider({ children }) {
   const [shopCart, setShopCart] = useState([]);
   const [updateSum, setUpdateSum] = useState(true)
   const [totalPrice, setTotalPrice] = useState([0]);
+  const [classMenu, setClassMenu] = useState({
+    classMenuName: 'navbar-menu',
+    burguerMenuActive: false,
+  });
   const contextValue = {
+    classMenu,
+    setClassMenu,
     updateSum,
     setUpdateSum,
     shopCart,
