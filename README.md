@@ -6,7 +6,12 @@ Esse é um desafio técnico de seleção para ser apresentado a empresa Código 
   <img src="https://im3.ezgif.com/tmp/ezgif-3-e868a7ed56.gif" />
 </div>
 
-### 📋 Pré-requisitos para instalação local.
+## 🛠️ Desenvolvido com
+
+* [ReactJS](https://pt-br.reactjs.org/)
+* [NodeJS](https://nodejs.org/)
+* [ExpressJS](https://expressjs.com/pt-br/)
+* [MongoDB](https://www.mongodb.com/)
 
 ```
 É necessário ter instalado o Git, MongoDB e o NodeJS para instalação local.
@@ -67,3 +72,7 @@ npm start
 <div align="center">
   <img src="https://im6.ezgif.com/tmp/ezgif-6-a664de4d55.gif" width="150px"/>
 </div>
+
+## 📄 Créditos
+
+As imagens das capas utilizadas como exemplo foram retiradas do site https://www.eneba.com/
