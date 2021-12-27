@@ -3,7 +3,7 @@
 Esse é um desafio técnico de seleção para ser apresentado a empresa Código Font, que visa desenvolver uma loja de games para compra e venda de jogos.
 
 <div align="center">
-  <img src="https://im2.ezgif.com/tmp/ezgif-2-0d1850e082.gif" />
+  <img src="https://im3.ezgif.com/tmp/ezgif-3-e868a7ed56.gif" />
 </div>
 
 ### 📋 Pré-requisitos para instalação local.
@@ -49,5 +49,9 @@ npm start
 ```
 
 <div align="center">
-  <img src="https://im2.ezgif.com/tmp/ezgif-2-0d1850e082.gif" />
+  <img src="https://im3.ezgif.com/tmp/ezgif-3-3f670457c9.gif" />
+</div>
+<br>
+<div align="center">
+  <img src="https://im6.ezgif.com/tmp/ezgif-6-a664de4d55.gif" width="150px"/>
 </div>
