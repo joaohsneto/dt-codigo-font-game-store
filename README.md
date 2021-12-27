@@ -29,6 +29,12 @@ cd dt-codigo-font-game-store.git
 cd back-end
 ```
 
+Instale as dependências digitando:
+
+```
+npm install
+```
+
 Depois rode o comando abaixo para deixar a API em funcionamento na porta http://localhost:3001/
 
 ```
@@ -40,6 +46,12 @@ Na segunda instância do terminal, entre no diretório clonado e na pasta front-
 ```
 cd dt-codigo-font-game-store.git
 cd front-end
+```
+
+Instale as dependências digitando:
+
+```
+npm install
 ```
 
 Depois rode o comando abaixo para o site funcioanr na porta http://localhost:3000/
