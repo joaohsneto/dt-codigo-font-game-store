@@ -3,7 +3,7 @@
 Esse é um desafio técnico de seleção para ser apresentado a empresa Código Font, que visa desenvolver uma loja de games para compra e venda de jogos.
 
 <div align="center">
-  <img src="https://im3.ezgif.com/tmp/ezgif-3-e868a7ed56.gif" />
+  <img src="https://raw.githubusercontent.com/joaohsneto/dt-codigo-font-game-store/main/front-end/public/images/ezgif.com-gif-maker_site1.gif" />
 </div>
 
 ## 🛠️ Desenvolvido com
@@ -66,11 +66,11 @@ npm start
 ```
 
 <div align="center">
-  <img src="https://im3.ezgif.com/tmp/ezgif-3-3f670457c9.gif" />
+  <img src="https://raw.githubusercontent.com/joaohsneto/dt-codigo-font-game-store/main/front-end/public/images/ezgif.com-gif-maker_site2.gif" />
 </div>
 <br>
 <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-a664de4d55.gif" width="150px"/>
+  <img src="https://raw.githubusercontent.com/joaohsneto/dt-codigo-font-game-store/main/front-end/public/images/ezgif.com-gif-maker_Mob.gif" width="150px"/>
 </div>
 
 ## 📄 Créditos
