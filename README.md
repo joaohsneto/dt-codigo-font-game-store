@@ -75,4 +75,4 @@ npm start
 
 ## 📄 Créditos
 
-As imagens das capas utilizadas como exemplo foram retiradas do site https://www.eneba.com/
+As imagens das capas, utilizadas como exemplo, foram retiradas do site https://www.eneba.com/
